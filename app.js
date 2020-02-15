@@ -5,8 +5,8 @@ $(document).ready(function(){
              dataType: 'json'
          }).done(function(reponse){
             $('#siyahi').empty();
-            reponse.images.forEach(element => {
-                $('#siyahi').append('<img src="' + value + '">')
+            reponse.images.array.forEach(function(value, index){
+                $('#siyahi').append('<img src= "' + value + '">')
             });
          })
      })
