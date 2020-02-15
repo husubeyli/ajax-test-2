@@ -13,7 +13,7 @@ $(document).ready(function(){
             response.images.forEach(function(value, index){
                 $('#siyahi').append('<img src= "' + value + '">')
             });
-            $('h2').css(response.title)
+            $('h2').html(response.title)
             
          })
      })
