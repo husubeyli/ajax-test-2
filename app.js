@@ -2,7 +2,7 @@ $(document).ready(function(){
      $('#load').on('click', function(){
          $.ajax({
              url: '/ajax-test-2/item.html',
-             dataType: 'json',
+             dataType: 'json'
          }).done(function(response){
             console.log(response)
             $('body').css({
