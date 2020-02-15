@@ -6,7 +6,7 @@ $(document).ready(function(){
          }).done(function(response){
              console.log(response)
             $('#siyahi').empty();
-            response.images.array.forEach(function(value, index){
+            response.images.forEach(function(value, index){
                 $('#siyahi').append('<img src= "' + value + '">')
             });
          })
