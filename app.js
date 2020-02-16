@@ -1,10 +1,9 @@
 $(document).ready(function(){
-     $('#load').on('click', function(){
+     $('#changeThem').on('click', function(){
          $.ajax({
              url: '/ajax-test-2/item.html',
              dataType: 'json'
          }).done(function(response){
-            $('#changeThem').on('click', function(){
                 if(response.backgroundWhite){
                     response.backgroundBlack
                 }else {
@@ -13,7 +12,6 @@ $(document).ready(function(){
                 $('body').css({
                     background: response.backgroundWhite
                 })
-            })
 
          })
      })
