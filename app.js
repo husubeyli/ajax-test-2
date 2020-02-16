@@ -20,12 +20,12 @@ $(document).ready(function(){
 })
 
 
-$('body').css({
-    background: response.backgroundWhite
-})
-$('h1').css(response.h1).html(response.header);
-$('#siyahi').empty();
-response.images.forEach(function(value, index){
-    $('#siyahi').append('<img src= "' + value + '">')
-});
-$('h2').html(response.title)
+// $('body').css({
+//     background: response.backgroundWhite
+// })
+// $('h1').css(response.h1).html(response.header);
+// $('#siyahi').empty();
+// response.images.forEach(function(value, index){
+//     $('#siyahi').append('<img src= "' + value + '">')
+// });
+// $('h2').html(response.title)
