@@ -4,13 +4,13 @@ $(document).ready(function(){
              url: '/ajax-test-2/item.html',
              dataType: 'json'
          }).done(function(response){
-                if(response.backgroundWhite){
-                    response.backgroundBlack
-                }else {
-                    response.backgroundWhite
-                }
+                // if(response.backgroundWhite){
+                //     response.backgroundBlack
+                // }else {
+                //     response.backgroundWhite
+                // }
                 $('body').css({
-                    background: response.backgroundWhite
+                    background: response.backgroundBlack
                 })
 
          })
