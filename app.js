@@ -4,16 +4,23 @@ $(document).ready(function(){
              url: '/ajax-test-2/item.html',
              dataType: 'json'
          }).done(function(response){
-                if(response.backgroundBlack){
-                    response.backgroundWhite
-                }else {
-                    response.backgroundBlack
-                }
                 $('body').css({
                     background: response.backgroundBlack,
                     color: response.color
                 })
 
+         })
+     })
+     $('#load').on('click', function(){
+         let title_film = $('#title_film').val()
+         $.ajax({
+             dataType: 'json',
+             url: 'http://omdbapi.com/?t=' +title_film + '&apikey=62997bce'
+         }).done(function(response){
+             $('#poster').attr('src', response.Poster),
+             $('#info #header').html(`Film name: ${response.Title}`),
+             $('#country').html(`Country: ${response.Country}`),
+             $('#year').html(`Year: ${response.Year}`)
          })
      })
 })
