@@ -1,26 +1,36 @@
 $(document).ready(function(){
-     
-         var ajax1 = $('#changeThem').on('click', function(){ $.ajax({
+     $('#changeThem').on('click', function(){
+         $.ajax({
              url: '/ajax-test-2/item.html',
              dataType: 'json'
-        })
-    })
-         var ajax2 =  $('#load').on('click', function(){
-            let title_film = $('#title_film').val()
-             $.ajax({
+         }).done(function(response){
+                $('body').css({
+                    background: response.backgroundBlack
+                })
+
+         })
+     })
+     $('#load').on('click', function(){
+         let title_film = $('#title_film').val()
+         var ajax2 = $.ajax({
              dataType: 'json',
              url: 'http://omdbapi.com/?t=' +title_film + '&apikey=62997bce'
-            })
-        })
-         $.when(ajax1, ajax2 ).done(function(response1, response2){
-            $('body').css({
-                background: response1.backgroundBlack
-            })
-             $('#poster').attr('src', response2.Poster),
-             $('#info #header').html(`Film name: ${response2.Title}`),
-             $('#country').html(`Country: ${response2.Country}`),
-             $('#year').html(`Year: ${response2.Year}`)
+         }).done(function(response){
+             $('#poster').attr('src', response.Poster),
+             $('#info #header').html(`Film name: ${response.Title}`),
+             $('#country').html(`Country: ${response.Country}`),
+             $('#year').html(`Year: ${response.Year}`)
          })
-
-
+     })
 })
+
+
+// $('body').css({
+//     background: response.backgroundWhite
+// })
+// $('h1').css(response.h1).html(response.header);
+// $('#siyahi').empty();
+// response.images.forEach(function(value, index){
+//     $('#siyahi').append('<img src= "' + value + '">')
+// });
+// $('h2').html(response.title)
