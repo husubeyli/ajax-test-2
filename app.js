@@ -14,7 +14,7 @@ $(document).ready(function(){
          let title_film = $('#title_film').val()
          var ajax2 = $.ajax({
              dataType: 'json',
-             url: 'http://omdbapi.com/?t=' +title_film + '&apikey=62997bce'
+             url: 'https://omdbapi.com/?t=' +title_film + '&apikey=62997bce'
          }).done(function(response){
              $('#poster').attr('src', response.Poster),
              $('#info #header').html(`Film name: ${response.Title}`),
