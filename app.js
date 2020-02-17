@@ -5,8 +5,7 @@ $(document).ready(function(){
              dataType: 'json'
          }).done(function(response){
                 $('body').css({
-                    background: response.backgroundBlack,
-                    color: response.color
+                    background: response.backgroundBlack
                 })
 
          })
