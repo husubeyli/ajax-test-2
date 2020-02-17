@@ -3,14 +3,15 @@ $(document).ready(function(){
          var ajax1 = $('#changeThem').on('click', function(){ $.ajax({
              url: '/ajax-test-2/item.html',
              dataType: 'json'
-     })
-    
+        })
+    })
          var ajax2 =  $('#load').on('click', function(){
-            let title_film = $('#title_film').val() $.ajax({
+            let title_film = $('#title_film').val()
+             $.ajax({
              dataType: 'json',
              url: 'http://omdbapi.com/?t=' +title_film + '&apikey=62997bce'
-         })
-    })
+            })
+        })
          $.when(ajax1, ajax2 ).done(function(response1, response2){
             $('body').css({
                 background: response1.backgroundBlack
@@ -21,15 +22,5 @@ $(document).ready(function(){
              $('#year').html(`Year: ${response2.Year}`)
          })
 
+
 })
-
-
-// $('body').css({
-//     background: response.backgroundWhite
-// })
-// $('h1').css(response.h1).html(response.header);
-// $('#siyahi').empty();
-// response.images.forEach(function(value, index){
-//     $('#siyahi').append('<img src= "' + value + '">')
-// });
-// $('h2').html(response.title)
